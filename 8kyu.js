@@ -16,7 +16,233 @@ class SmallestIntegerFinder {
 //     }
 // }
 
-// remove string spaces
+/* removing every other elements */
+function removeEveryOther(arr){
+    for (let i = 1; i < arr.length; i++) {
+        arr.splice(i, 1)
+    }
+    return arr
+}
+// refactor
+// function removeEveryOther(arr){
+//     return arr.filter(function(elem, index) {
+//         return index % 2 === 0;
+//     });
+// }
+
+/* set alarm */
+// original
+// function setAlarm(employed, vacation){
+//     let alarmOn = false;
+//     (employed === true && vacation === false) ? alarmOn = true : alarmOn = false;
+//     return alarmOn;
+// }
+// refactor
+function setAlarm(employed, vacation){
+    let alarmOn = false;
+    (employed && !vacation) ? alarmOn = true : alarmOn;
+    return alarmOn;
+}
+// another cool way
+// const setAlarm = (employed, vacation) => employed && !vacation;
+// mind blown
+// function setAlarm(employed, vacation){
+//     return employed > vacation
+// }
+
+/* DNA to RNA conversion */
+function DNAtoRNA(dna) {
+    if (dna === '') return ''
+    const array = dna.split('')
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'T') array[i] = 'U';
+    }
+    return array.join('')
+}
+// refactor
+// function DNAtoRNA(dna){
+//     return dna.replace(/T/g, 'U');
+// }
+
+/* count by x */
+// original solution
+// function countBy(x, n) {
+//     let z = [];
+//     let numbers = []
+//     for (let i = 1; i <= n; i++) {
+//       numbers.push(i * x)
+//     }
+//     for (let i = 0; i <= n; i++) {
+//       //find multiple
+//         if (numbers[i] % x === 0) {
+//             z.push(numbers[i])
+//         }
+//     }
+//     return z;
+// }
+// refactor
+function countBy(x, n) {
+    let z = [];
+    for (let i = 1; i <= n; i++) {
+      z.push(x * i)
+    }
+    return z;
+}
+
+// another refactor
+// const countBy = (x, n) => Array.from({length: n}, (v, k) => (k + 1) * x)
+
+/* abbreviate two word name */
+function abbrevName(name){
+    const array = name.split(' ')
+    const first = array[0].toUpperCase()
+    const last = array[1].toUpperCase()
+    return `${first[0]}.${last[0]}`
+}
+// refactor
+// function abbrevName(name){
+//     var nameArray = name.split(" ");
+//     return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+// }
+// another refactor way
+// function abbrevName(name){
+//     return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+// }
+
+/* count positives / sum negatives */
+function countPositivesSumNegatives(input) {
+    if (input === null) return [];
+    const output = []
+    if (input.length) {
+        output[0] = 0
+        output[1] = 0
+        input.forEach(num => {
+        if (num > 0) output[0]++;
+        if (num <= 0) output[1] += num;
+        })
+    }
+    return output;
+}
+// more readable
+// function countPositivesSumNegatives(input) {
+//     if (input == null || input.length == 0) return [];
+//     var positive = 0;
+//     var negative = 0;
+//     for (var i=0, l=input.length; i<l; ++i)
+//     {
+//     if (input[i] > 0)
+//         ++ positive;
+//     else
+//         negative += input[i];
+//     }
+//     return [positive, negative];
+// }
+
+// refactor like whoa
+// function countPositivesSumNegatives(input) {
+//     return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
+// }
+
+/* rock paper scissors */
+const rps = (p1, p2) => {
+    if (p1 === p2) {
+        return 'Draw!'
+    }
+    if ((p1 === 'rock' && p2 === 'scissors') || (p1 === 'paper' && p2 === 'rock') || (p1 === 'scissors' && p2 === 'paper')) {
+        return 'Player 1 won!'
+    } else {
+        return 'Player 2 won!'
+    } 
+}
+// refactor
+// const rps = (p1, p2) => {
+//     if(p1 === p2) {
+//         return 'Draw!'
+//     }; 
+//     return `Player ${/rockscissors|scissorspaper|paperrock/.test(p1+p2)? 1 : 2} won!`;
+// }
+
+/* needle in the haystack */
+function findNeedle(haystack) {
+    return `found the needle at position ${haystack.indexOf('needle')}`
+}
+
+/* grasshopper summation */
+var summation = function (num) {
+    let numbers = [];
+    let sum = 0;
+    for (let i= 0; i <= num; i++) {
+        numbers.push(i)
+    }
+    numbers.forEach(number => {
+        sum += number;
+    })
+    return sum;
+}
+
+// refactor
+// const summation = n => n * (n + 1) / 2;
+// var summation = function (num) {
+//     let result = 0;
+//     for (var i = 1; i <= num; i++) {
+//         result += i;
+//     }
+    
+//     return result;
+// }
+
+/* even or odd */
+function even_or_odd(number) {
+    if (number % 2 === 0) {
+        return 'Even'
+    } else {
+        return 'Odd'
+    }
+}
+// refactor
+// function even_or_odd(number) {
+//     return number % 2 ? "Odd" : "Even"
+// }
+
+/* square n sum */
+function squareSum(numbers){
+    let sum = 0;
+    numbers.forEach(number => {
+      sum += number ** 2;
+    });
+    return sum;
+}
+// refactor
+// function squareSum(numbers){
+//     return numbers.reduce(function(sum, n){
+//         return (n*n) + sum;
+//     }, 0)
+// }
+// refactor
+// function squareSum(numbers){
+//     return numbers.reduce((sum,num) => sum + (num * num), 0);
+// }
+
+/* fake binary */
+function fakeBin(x){
+    const digits = x.split('');
+    let str = '';
+    digits.forEach(digit => {
+        if (digit < 5) {
+        str += 0
+    } else {
+        str += 1
+    }
+    })
+    return str
+}
+
+// refactor
+// function fakeBin(x) {
+//     return x.split('').map(n => n < 5 ? 0 : 1).join('');
+// }
+
+/* remove string spaces */
 function noSpace(x){
     return x.replace(/ /g,'')
 }
