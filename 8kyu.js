@@ -1,3 +1,22 @@
+/* sum of array */
+function sum (numbers) {
+    "use strict";
+    if(numbers.length === 0){
+        return 0;
+    }
+    let sum = 0;
+    numbers.forEach(number => {
+    sum += number;
+    })
+    return sum;
+};
+// using methods
+// function sum(numbers) {
+//     return numbers.reduce((a, b) => a + b, 0);
+// }
+// arrow function
+// const sum = n => n.reduce((a,b) => a+b, 0);
+
 /* find smallest integer in the array */
 // my solution
 class SmallestIntegerFinder {
