@@ -1,3 +1,31 @@
+/* Two Sum */
+function twoSum(numbers, target) {
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = 1; j < numbers.length; j++) {
+            if (numbers[i] + numbers[j] === target) {
+                return [i, j] // return indexes
+            }
+        }
+    }
+}
+
+// Optimal Solution => T: O(n) S: 0(n)
+
+const twoSum = function (numbers, target){
+    const map = {}; // hash
+    for (let p = 0; p < numbers.length; p++){
+        const currMapVal = map[numbers[p]]
+        if (currMapVal >= 0){
+            return [currMapVal, p]
+        } else {
+            const numToFind = target - numbers[p]
+            map[numToFind] = p
+        } 
+    }
+    return null
+}
+
+
 /* Break camelCase */
 function solution(string) {
     return string.split(/(?=[A-Z])/g).join(' ');
