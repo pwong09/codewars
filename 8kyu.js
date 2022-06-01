@@ -1,3 +1,27 @@
+/* freudian translator */
+function toFreud(string) {
+    if (string.length === 0) return ''
+    const array = string.split(' ')
+    for (let i = 0; i < array.length; i++) {
+        array[i] = 'sex'
+    }
+    return array.join(' ')
+}
+
+// refactor
+// var toFreud=s=>s.replace(/[^ ]+/g,'sex')
+// const toFreud = str => str === '' ? '' : str.split(' ').map(e => 'sex').join(' ')
+
+/* reversed sequence */
+const reverseSeq = n => {
+    const array = [];
+    for (let i = n; i > 0; i--) {
+        array.push(i);
+    }
+    return array;
+};
+// refactor
+// const reverseSeq = length => Array.from({length}, () => length--)
 /* sum of array */
 function sum (numbers) {
     "use strict";
