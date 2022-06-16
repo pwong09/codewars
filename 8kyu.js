@@ -1,3 +1,18 @@
+/* xor */
+function xor(a, b) {
+    if (a > b) {
+        return true
+    } else if (b > a) {
+        return true
+    } else {
+        return false
+    }
+}
+// refactor
+// function xor(a, b) {
+//     return a != b;
+// }
+
 /* replace certain digits with letters */
 function correct(string)
 {
