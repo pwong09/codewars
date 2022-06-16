@@ -1,4 +1,12 @@
-
+/* length and 2 alternating values */
+function alternate(n, firstValue, secondValue){
+    if (n === 0) return [];
+    const newArray = []
+    for (let i = 0; i < n; i++) {
+        i % 2 === 0 ? newArray.push(firstValue) : newArray.push(secondValue)
+    }
+    return newArray
+}
 /* square every digit */
 function squareDigits(num){
     num = num.toString();
