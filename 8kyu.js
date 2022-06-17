@@ -1,3 +1,7 @@
+/* validate username, no capitalized letters */
+function validateUsr(username) {
+    return /^[a-z\d\_]{4,16}$/.test(username) 
+}
 /* xor */
 function xor(a, b) {
     if (a > b) {
