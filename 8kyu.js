@@ -1,3 +1,29 @@
+/* max of 3 integer combos */
+function expressionMatter(a, b, c) {
+    const num1 = a * (b + c)
+    const num2 = a * b * c
+    const num3 = a + b * c
+    const num4 = (a+b) * c
+    const num5 = a * b + c
+    const num6 = a + b + c
+    const array = [num1, num2, num3, num4, num5, num6]
+    let max = 0
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > max) max = array[i]
+    }
+    return max; // highest achievable result
+}
+//refactor with Math
+// function expressionMatter(a, b, c) {
+//     return Math.max(
+//         a + b + c,
+//         a * b * c,
+//         a * (b + c),
+//         (a + b) * c,
+//         a + b * c,
+//         a * b + c,
+//     );
+// }
 /* validate username, no capitalized letters */
 function validateUsr(username) {
     return /^[a-z\d\_]{4,16}$/.test(username) 
