@@ -1,3 +1,19 @@
+/* checking consecutiveness for a, b */
+function consecutive(arr, a, b) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === a) {
+            return arr[i+1] === b
+        } else if (arr[i] === b) {      
+            return arr[i+1] === a
+        }
+    }
+    return false
+}
+//refactor
+// function consecutive(arr, a, b) {
+//     return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
+// }
+
 /* length and 2 alternating values */
 function alternate(n, firstValue, secondValue){
     if (n === 0) return [];
