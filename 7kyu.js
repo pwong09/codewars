@@ -1,3 +1,8 @@
+/* ends with */
+function solution(str, ending){
+    return str.endsWith(ending);
+}
+
 /* checking consecutiveness for a, b */
 function consecutive(arr, a, b) {
     for (let i = 0; i < arr.length; i++) {
