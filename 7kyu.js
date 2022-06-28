@@ -1,3 +1,22 @@
+/* return max & min of an array */
+function minMax(arr){
+    let max = arr[0]
+    let min = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        } else if (arr[i] < min) {
+            min = arr[i]
+        }
+    }
+    return [min, max]
+}
+
+//refactor
+// function minMax(arr){
+//     return [Math.min(...arr), Math.max(...arr)];
+// }
+
 /* ends with */
 function solution(str, ending){
     return str.endsWith(ending);
