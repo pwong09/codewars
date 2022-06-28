@@ -1,3 +1,33 @@
+/* counting total duplicates, not duplicate instances */
+function duplicateCount(text){
+    const arr = text.toLowerCase().split('');
+    const duplicates = {};
+    let result = 0;
+    arr.map(str => {
+        if (!duplicates.hasOwnProperty(str)) {
+            duplicates[str] = 0;
+        } else {
+        if (duplicates[str] === 0) {
+            result += 1;
+        }
+        duplicates[str] = duplicates[str] + 1;      
+        }
+    });
+    return result;
+}
+
+// refactor regex
+// function duplicateCount(text){
+//     return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
+// }
+
+// refactor filter
+// function duplicateCount(text){
+//     return text.toLowerCase().split('').filter(function(val, i, arr){
+//         return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
+//     }).length;
+// }
+
 /* Tribonacci - type of Fibonacci */
 function tribonacci(signature,n){
     let arr = signature
