@@ -1,3 +1,14 @@
+/* Give me a diamond */
+function diamond(n){
+    if (n % 2 === 0 || n < 1) return null;
+    let diam = '*'.repeat(n) + '\n' // middle row
+    let space = 0;
+    for (let numStar = n - 2; numStar >= 1; numStar -= 2) {
+        let outerDiam = ' '.repeat(space++) + '*'.repeat(numStar) + '\n'
+        diam = ` ${outerDiam}${diam} ${outerDiam}`
+    }
+    return diam;
+}
 /* counting total duplicates, not duplicate instances */
 function duplicateCount(text){
     const arr = text.toLowerCase().split('');
