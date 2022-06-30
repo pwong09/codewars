@@ -1,3 +1,16 @@
+/* check if string is Pangram */
+function isPangram(string){
+    string = string.toLowerCase()
+    const regex = /([a-z])(?!.*\1)/g;
+    return (string.match(regex)).length === 26;
+}
+// refactor
+// function isPangram(string){
+//     string = string.toLowerCase();
+//     return "abcdefghijklmnopqrstuvwxyz".split("").every(function(x){
+//         return string.indexOf(x) !== -1;
+//     });
+// }
 /* Give me a diamond */
 function diamond(n){
     if (n % 2 === 0 || n < 1) return null;
