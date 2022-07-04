@@ -1,3 +1,16 @@
+/* return highest & lowest numbers when inputed as string of numbers */
+function highAndLow(numbers){
+    let numArr = [];
+    numbers.split(' ').forEach(num => numArr.push(parseInt(num)));
+    numArr = numArr.sort((a, b) => a - b);
+    return numArr[numArr.length-1].toString() + " " + numArr[0].toString()
+}
+// refactor
+// function highAndLow(numbers){
+//     numbers = numbers.split(' ');
+//     return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+// }
+
 /* return index of element that is midpoint of other 2 elements */
 function gimme(triplet){
     if ((triplet[0] < triplet[1] && triplet[0] > triplet[2]) || (triplet[0] >triplet[1] && triplet[0] < triplet[2])){
@@ -12,7 +25,11 @@ function gimme(triplet){
 // function gimme(triplet) {
 //     return triplet.indexOf(triplet.concat().sort(function(a, b) { return a - b })[1])
 // }
-
+/* concat makes a shallow copy of original triplet array. 
+Copy is sorted so the middle element is at index 1
+Go back to original array, triplet, to find original index 
+of that middle element in copy
+*/
 
 /* return max & min of an array */
 function minMax(arr){
