@@ -1,3 +1,19 @@
+/* return index of element that is midpoint of other 2 elements */
+function gimme(triplet){
+    if ((triplet[0] < triplet[1] && triplet[0] > triplet[2]) || (triplet[0] >triplet[1] && triplet[0] < triplet[2])){
+        return 0 ;  
+    } else if ((triplet[1] < triplet[0] && triplet[1] > triplet[2]) || (triplet[1] >triplet[0] && triplet[1] < triplet[2])){
+        return 1  
+    } else if ((triplet[2] < triplet[0] && triplet[2] > triplet[1]) || (triplet[2] >triplet[0] && triplet[2] < triplet[1])){
+        return 2  
+    }
+}
+// refactor
+// function gimme(triplet) {
+//     return triplet.indexOf(triplet.concat().sort(function(a, b) { return a - b })[1])
+// }
+
+
 /* return max & min of an array */
 function minMax(arr){
     let max = arr[0]
