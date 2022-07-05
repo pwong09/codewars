@@ -1,3 +1,24 @@
+/* exes and ohs */
+function XO(str) {
+    const arr = str.toLowerCase().split('');
+    let countX = 0;
+    let countO = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 'x') { 
+            countX++
+        } else if (arr[i] === 'o') {
+            countO++
+        }
+    }
+    return countX === countO ? true : false;
+}
+
+// refactor 
+// function XO(str) {
+//     const arr = str.toLowerCase().split('');
+//     return arr.filter(el => el === 'x').length === arr.filter(el => el === 'o').length;
+// }
+
 /* return highest & lowest numbers when inputed as string of numbers */
 function highAndLow(numbers){
     let numArr = [];
