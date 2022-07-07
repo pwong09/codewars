@@ -1,7 +1,18 @@
+/* N-th Power */
+function index(array, n){
+    return n >= array.length ? -1 : array[n]**n;
+}
+// refactor
+// const index = (array, n) => array.length > n ? Math.pow(array[n], n) : -1;
+// function index(array, n){
+//     return array[n] ** n || -1;
+// }
+
 /* play banjo */
 function areYouPlayingBanjo(name) {
     return (name[0].toLowerCase() === 'r') ? name + ' plays banjo' : name + ' does not play banjo';
 }
+
 /* max of 3 integer combos */
 function expressionMatter(a, b, c) {
     const num1 = a * (b + c)
@@ -28,10 +39,12 @@ function expressionMatter(a, b, c) {
 //         a * b + c,
 //     );
 // }
+
 /* validate username, no capitalized letters */
 function validateUsr(username) {
     return /^[a-z\d\_]{4,16}$/.test(username) 
 }
+
 /* xor */
 function xor(a, b) {
     if (a > b) {
