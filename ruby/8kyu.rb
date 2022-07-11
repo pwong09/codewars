@@ -1,3 +1,14 @@
+# enough
+def enough(cap, on, wait)
+  remainder = cap - on
+  return remainder - wait >= 0 ? 0 : (remainder - wait) * -1
+end  
+
+# refactor
+def enough(cap, on, wait)
+  [on + wait - cap, 0].max
+end
+
 # powers of 2
 def powers_of_two(n)
     arr = []
