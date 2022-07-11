@@ -1,3 +1,20 @@
+# Sum Numbers Array
+def sum(numbers)
+  sum = 0
+  for number in numbers
+    sum = sum + number
+  end
+  return sum
+end
+
+# refactor
+# def sum(numbers)
+#   numbers.inject(0, :+)
+# end
+# def sum(n)
+#   n.sum
+# end
+
 # enough
 def enough(cap, on, wait)
   remainder = cap - on
