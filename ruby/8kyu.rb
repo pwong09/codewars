@@ -1,3 +1,17 @@
+# what is between
+def between(a, b)
+  array = []
+  for i in a..b
+    array.push(i)
+  end
+  return array
+end
+
+# refactor
+def between(a, b)
+  (a..b).to_a
+end
+
 # Sum Numbers Array
 def sum(numbers)
   sum = 0
