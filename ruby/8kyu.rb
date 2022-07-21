@@ -1,3 +1,16 @@
+# sum of positive numbers in array
+def positive_sum(arr)
+  sum=0
+  arr.each {|x|
+  if x>0
+  sum+=x end}
+return sum
+end
+# refactor with methods
+# def positive_sum(arr)
+#   arr.select{|x| x > 0}.reduce(0, :+)
+# end
+
 # what is between
 def between(a, b)
   array = []
