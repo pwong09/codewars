@@ -1,3 +1,16 @@
+# basic math ops in string
+def basic_op(operator, value1, value2)
+  return eval "#{value1}#{operator}#{value2}"
+end
+
+# refactor
+# def basic_op(operator, *values)
+#   values.reduce(operator)
+# end
+# def basic_op(operator, value1, value2)
+#   value1.public_send operator, value2
+# end
+
 # sum of positive numbers in array
 def positive_sum(arr)
   sum=0
