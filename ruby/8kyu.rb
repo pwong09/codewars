@@ -1,3 +1,33 @@
+# months of the year in quarter
+def quarter_of(month)
+  if month <= 3 
+    return 1
+  elsif month <= 6 
+    return 2
+  elsif month <= 9 
+    return 3
+  else
+    return 4
+  end
+end
+# refactor
+# def quarter_of(month)
+#     (month/3.0).ceil
+# end
+# def quarter_of(month)
+#   case month
+#     when (1..3)
+#       return 1  
+#     when (4..6)
+#       return 2
+#     when (7..9)
+#       return 3
+#     when (10..12)
+#       return 4
+#     else
+#       "Invalid month selected"
+#     end
+# end
 # basic math ops in string
 def basic_op(operator, value1, value2)
   return eval "#{value1}#{operator}#{value2}"
