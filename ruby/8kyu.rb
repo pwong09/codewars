@@ -1,3 +1,26 @@
+# sum array w/o highest & lowest numbers
+def sum_array(arr)
+  if arr == nil || arr == [] || arr.length <= 2
+    return 0
+  else
+    arr.sort!
+    arr.delete_at(0)
+    arr.delete_at(-1)
+    return arr.inject(0, :+)
+  end
+end
+#refactor
+# def sum_array(arr)
+#   if arr.kind_of?(Array) and arr.length > 2
+#     arr.inject(:+) - arr.min - arr.max
+#   else
+#     0
+#   end
+# end
+# def sum_array(arr)
+#   arr.nil? || arr.empty? ? 0 : arr.sort[1..-2].reduce(0, :+)
+# end
+
 # months of the year in quarter
 def quarter_of(month)
   if month <= 3 
