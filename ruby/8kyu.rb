@@ -1,3 +1,7 @@
+# keep hydrated
+def litres(time)
+  return (time * 0.5).floor
+end
 # sum array w/o highest & lowest numbers
 def sum_array(arr)
   if arr == nil || arr == [] || arr.length <= 2
