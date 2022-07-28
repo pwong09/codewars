@@ -1,3 +1,19 @@
+# counting sheep
+def count_sheep(num)
+  num == 0 ? "" : nil
+  str = ""
+  for i in 1..num
+    str = str + "#{i} sheep..."
+  end
+  return str
+end
+# refactor
+# def count_sheep(num)
+#   (1..num).map {|i| "#{i} sheep..."}.join
+# end
+# def count_sheep(num)
+#   (1..num).reduce("") {|acc, e| acc += "#{e} sheep..."}
+# end
 # keep hydrated
 def litres(time)
   return (time * 0.5).floor
