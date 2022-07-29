@@ -1,3 +1,16 @@
+# multiply 2 numbers
+def multiply(num1, num2)
+  num1 * num2
+end
+#refactor
+def multiply(a,b)
+  raise ArgumentError, 'arguments must be a numbers' unless a.is_a?(Integer) and b.is_a?(Integer)
+  a*b
+end
+# reverse a string
+def solution(str)
+  str.reverse
+end
 # counting sheep
 def count_sheep(num)
   num == 0 ? "" : nil
