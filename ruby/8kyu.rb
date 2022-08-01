@@ -1,12 +1,21 @@
+# flower petals
+def lovefunc( flower1, flower2 )
+  flower1 % 2 == 0 && flower2 % 2 != 0 ? true :
+  flower1 % 2 != 0 && flower2 % 2 == 0 ? true : false
+end
+# refactor
+# def lovefunc( flower1, flower2 )
+#   (flower1 + flower2).odd?
+# end
 # multiply 2 numbers
 def multiply(num1, num2)
   num1 * num2
 end
 #refactor
-def multiply(a,b)
-  raise ArgumentError, 'arguments must be a numbers' unless a.is_a?(Integer) and b.is_a?(Integer)
-  a*b
-end
+# def multiply(a,b)
+#   raise ArgumentError, 'arguments must be a numbers' unless a.is_a?(Integer) and b.is_a?(Integer)
+#   a*b
+# end
 # reverse a string
 def solution(str)
   str.reverse
