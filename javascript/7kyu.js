@@ -1,3 +1,7 @@
+/* remove anchor from url */
+function removeUrlAnchor(url){
+    return url.split('#')[0];
+}
 /* exes and ohs */
 function XO(str) {
     const arr = str.toLowerCase().split('');
