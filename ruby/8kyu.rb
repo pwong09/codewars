@@ -1,3 +1,8 @@
+# testing 1-2-3
+def number lines
+  lines.nil? ? [] : lines.each_with_index.map { |x, idx| "#{idx+1}: #{x}"}
+end
+
 # flower petals
 def lovefunc( flower1, flower2 )
   flower1 % 2 == 0 && flower2 % 2 != 0 ? true :
