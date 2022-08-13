@@ -1,3 +1,7 @@
+# sum 2 smallest integers of array
+def sum_two_smallest_numbers(numbers)
+    return numbers.sort.slice(0,2).sum
+end
 # sort numbers
 def solution(nums)
     return ( nums.nil? ? [] : nums.sort )
