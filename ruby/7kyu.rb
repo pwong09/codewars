@@ -1,3 +1,7 @@
+# descending order
+def descending_order(n)
+    n.digits.sort.reverse.join.to_i
+end
 # convert from binary to integer
 def binary_array_to_number(arr)
     arr.join("").to_i(2)
