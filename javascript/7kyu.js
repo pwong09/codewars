@@ -1,3 +1,24 @@
+/* factorial */
+function FirstFactorial(num) { 
+    if (num < 0) return -1
+    if (num === 0 || num === 1) return 1
+    let fact = num
+    while (num > 0) {
+        num--;
+      fact *= num;
+    }
+    return fact; 
+}
+// refactor - recursion?
+// function factorial(num) {
+//     if (num < 0) {
+//         return -1;
+//     } else if (num === 0) {
+//         return 1;
+//     } else {
+//         return (num * factorial(num -1));
+//     }
+// }
 /* remove anchor from url */
 function removeUrlAnchor(url){
     return url.split('#')[0];
