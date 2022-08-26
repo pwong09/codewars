@@ -1,8 +1,16 @@
+# plural
+def plural(n)
+  n == 1 ? false : true
+end
 # testing 1-2-3
 def number lines
   lines.nil? ? [] : lines.each_with_index.map { |x, idx| "#{idx+1}: #{x}"}
 end
-
+# refactor
+# def plural(n)
+#   n != 1
+#   !n.eql?(1)
+# end
 # flower petals
 def lovefunc( flower1, flower2 )
   flower1 % 2 == 0 && flower2 % 2 != 0 ? true :
