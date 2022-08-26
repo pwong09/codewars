@@ -1,3 +1,18 @@
+# what's the real foor
+def get_real_floor(n)
+  if n < 0
+    return n
+  elsif n == 0 or n == 1
+    return 0
+  elsif n <= 13
+    return n - 1
+  elsif n > 13
+    return n - 2
+  end
+end
+# refactor
+# n >= 1 ? (n > 13 ? n-2 : n-1) : n
+
 # plural
 def plural(n)
   n == 1 ? false : true
