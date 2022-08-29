@@ -1,3 +1,14 @@
+# is it a palindrome?
+def is_palindrome(str)
+  str = str.downcase
+  str == str.reverse
+end
+# refactor
+# def is_palindrome str
+#   str.casecmp?(str.reverse) 
+#   (s = s.downcase) == s.reverse
+# end
+
 # what's the real foor
 def get_real_floor(n)
   if n < 0
