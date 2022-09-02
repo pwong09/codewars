@@ -1,3 +1,19 @@
+# Sum of the first nth term of Series
+def series_sum(n)
+    if n == 0 
+        return "0.00"
+    end
+    result = 0
+    for i in 0...n
+      result += (1.0 / (1 + i * 3))
+    end
+    return sprintf('%.2f', result)
+end
+# refactor
+# def series_sum(n)
+#     return "0.00" if n == 0
+#     '%.2f' % (0..n-1).to_a.map { | x | (1.0/(x*3+1))}.reduce(:+)
+# end
 # descending order
 def descending_order(n)
     n.digits.sort.reverse.join.to_i
