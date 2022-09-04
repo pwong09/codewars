@@ -1,3 +1,12 @@
+# small enough?
+def small_enough(a, limit)
+    a.none? { |num| num > limit }
+end
+# refactor / other methods could use
+# a.max <= limit
+# a.all? { |item| item <= limit }
+# a.all?(..limit)
+# !a.any? { |val| val > limit }
 # Sum of the first nth term of Series
 def series_sum(n)
     if n == 0 
