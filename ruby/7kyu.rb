@@ -1,3 +1,8 @@
+# from the minimum
+def min_value(digits)
+    digits.uniq.sort.join.to_i
+end
+
 # small enough?
 def small_enough(a, limit)
     a.none? { |num| num > limit }

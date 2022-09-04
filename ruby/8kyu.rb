@@ -1,3 +1,15 @@
+# return number 5 every time w/o using numbers
+def unusual_five
+  ['x','x','x','x','x'].size
+end  
+# refactor
+# 'five!'.length
+
+# reduce but grow
+def grow(x) 
+  x.reduce(:*)
+end
+
 # is it a palindrome?
 def is_palindrome(str)
   str = str.downcase
@@ -37,6 +49,7 @@ end
 #   n != 1
 #   !n.eql?(1)
 # end
+
 # flower petals
 def lovefunc( flower1, flower2 )
   flower1 % 2 == 0 && flower2 % 2 != 0 ? true :
@@ -46,6 +59,7 @@ end
 # def lovefunc( flower1, flower2 )
 #   (flower1 + flower2).odd?
 # end
+
 # multiply 2 numbers
 def multiply(num1, num2)
   num1 * num2
@@ -55,6 +69,7 @@ end
 #   raise ArgumentError, 'arguments must be a numbers' unless a.is_a?(Integer) and b.is_a?(Integer)
 #   a*b
 # end
+
 # reverse a string
 def solution(str)
   str.reverse
@@ -75,6 +90,7 @@ end
 # def count_sheep(num)
 #   (1..num).reduce("") {|acc, e| acc += "#{e} sheep..."}
 # end
+
 # keep hydrated
 def litres(time)
   return (time * 0.5).floor
@@ -132,6 +148,7 @@ end
 #       "Invalid month selected"
 #     end
 # end
+
 # basic math ops in string
 def basic_op(operator, value1, value2)
   return eval "#{value1}#{operator}#{value2}"
@@ -166,7 +183,6 @@ def between(a, b)
   end
   return array
 end
-
 # refactor
 def between(a, b)
   (a..b).to_a
@@ -180,7 +196,6 @@ def sum(numbers)
   end
   return sum
 end
-
 # refactor
 # def sum(numbers)
 #   numbers.inject(0, :+)
@@ -194,7 +209,6 @@ def enough(cap, on, wait)
   remainder = cap - on
   return remainder - wait >= 0 ? 0 : (remainder - wait) * -1
 end  
-
 # refactor
 def enough(cap, on, wait)
   [on + wait - cap, 0].max
@@ -208,7 +222,6 @@ def powers_of_two(n)
     end
     return arr
 end
-
 # refactor
 # def powers_of_two(n)
 #     (0..n).map { |k| 2**k }
