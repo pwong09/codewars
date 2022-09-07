@@ -1,3 +1,21 @@
+# maximum length distance
+def mxdiflg(a1, a2)
+    return -1 if a1.empty? or a2.empty?
+    a1 = a1.sort_by{|str| str.length}
+    a2 = a2.sort_by{|str| str.length}
+    if (a1[-1].length - a2[0].length).abs > (a1[0].length - a2[-1].length).abs
+        return (a1[-1].length - a2[0].length).abs
+    else
+        return (a1[0].length - a2[-1].length).abs
+    end
+end
+# refactor
+# a1.product(a2).map {|x,y| (x.length - y.length).abs}.max
+
+# min1, max1 = a1.map(&:size).minmax
+# min2, max2 = a2.map(&:size).minmax
+# [max1 - min2, max2 - min1].max
+
 # from the minimum
 def min_value(digits)
     digits.uniq.sort.join.to_i

@@ -1,3 +1,7 @@
+# get a character from ASCII value
+def getChar(c)
+  c.chr
+end
 # return number 5 every time w/o using numbers
 def unusual_five
   ['x','x','x','x','x'].size
