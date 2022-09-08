@@ -1,3 +1,12 @@
+# drink about
+def people_with_age_drink(old)
+  old < 14 ? "drink toddy" : 
+  old < 18 ? "drink coke" : 
+  old < 21 ? "drink beer" : "drink whisky"
+end
+# refactor
+# "drink " + (old < 14? "toddy": old < 18? "coke": old < 21? "beer": "whisky") 
+
 # get a character from ASCII value
 def getChar(c)
   c.chr
