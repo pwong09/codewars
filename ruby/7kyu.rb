@@ -1,3 +1,11 @@
+# summing a number's digits
+def sum_digits(number)
+    number.to_s.split('').reduce(0) {|sum, num| sum += num.to_i}
+end
+# refactor
+# number.to_s.chars.map(&:to_i).reduce(:+)
+# number.abs.digits.sum
+
 # maximum length distance
 def mxdiflg(a1, a2)
     return -1 if a1.empty? or a2.empty?
