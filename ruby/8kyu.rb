@@ -1,3 +1,30 @@
+# hello name or world
+def hello(name = nil)
+  if name.nil? or name.empty?
+    "Hello, World!"
+  else
+    "Hello, #{name.capitalize}!"
+  end
+end
+# refactor
+# def hello(name='World')
+#   "Hello, #{name.empty? ? 'World' : name.capitalize}!"
+# end
+# def hello(name="")
+#   name.empty? ? "Hello, World!" : "Hello, #{name.downcase.capitalize}!"
+# end
+
+# reverse words
+def reverse(string)
+  string.split.reverse!.join(" ")
+end
+# cockroach speed
+def cockroach_speed(s)
+  (s * 27.7778).to_i
+end
+# refactor
+# (s / 0.036).floor
+
 # drink about
 def people_with_age_drink(old)
   old < 14 ? "drink toddy" : 
