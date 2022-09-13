@@ -1,3 +1,16 @@
+# find the next perfect square
+def find_next_square(sq)
+    next_i = Math.sqrt(sq).to_i + 1
+    next_sq = next_i * next_i
+    Math.sqrt(sq).to_s[-1] == '0' ? next_sq : -1
+end
+# refactor
+# number = Math.sqrt(sq) + 1
+# number % 1 == 0 ? number**2 : -1
+
+#  sqrt = Math.sqrt(sq)
+#  sqrt % 1 == 0 ? (sqrt + 1)**2 : -1
+
 # summing a number's digits
 def sum_digits(number)
     number.to_s.split('').reduce(0) {|sum, num| sum += num.to_i}
