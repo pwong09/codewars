@@ -1,3 +1,23 @@
+/* grasshopper */
+function move (position, roll) {
+    return position + roll * 2
+}
+
+/* name shufle */
+function nameShuffler(str){
+    const array = str.split(" ")
+    return array[1] + " " + array[0]
+}
+// refactor
+// return str.split(' ').reverse().join(' ')
+
+/* ternary op practice */
+function saleHotdogs(n){
+    return n < 5 ? n * 100 : n >= 5 && n < 10 ? n * 95 : n * 90;
+}
+// refactor
+// return n*(n<5?100:n<10?95:90);
+
 /* N-th Power */
 function index(array, n){
     return n >= array.length ? -1 : array[n]**n;
