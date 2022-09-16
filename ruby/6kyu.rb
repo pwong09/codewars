@@ -1,3 +1,38 @@
+# equal sides of an array
+def find_even_index(arr)
+  sum = 0
+  left_sum = 0
+  arr.each do |num| 
+    sum += num
+  end
+  for i in 0...arr.length
+    sum -= arr[i]
+    if left_sum === sum
+      return i
+    end
+    left_sum += arr[i]
+  end
+  -1
+end
+# refactor
+# def find_even_index(arr)
+#   left_sum = 0
+#   right_sum = arr.reduce(:+)
+  
+#   arr.each_with_index do |e, ind|
+#     right_sum -= e
+    
+#     return ind if left_sum == right_sum
+
+#     left_sum += e
+#   end
+  
+#   -1  
+# end
+
+# unreadable / hard to read option
+# 0.upto(ary.length).select{|l| ary[0..l].reduce(:+) == ary[l..-1].reduce(:+)}.first || -1
+
 # help the bookseller
 def stockList(listOfArt, listOfCat)
     return "" if listOfArt.empty? or listOfCat.empty?
