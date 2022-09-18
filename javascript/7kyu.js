@@ -1,3 +1,26 @@
+/* mumbling */
+function accum(s) {
+    let result = s[0].toUpperCase()
+    for (let i = 1; i < s.length; i++) {
+        const string = s[i].repeat(i+1)
+        result += "-" + string[0].toUpperCase() + string.slice(1).toLowerCase()
+    }
+    return result
+}
+// refactor
+// return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+
+/* number of people on bus */
+var number = function(busStops){
+    let numOfPassengers = 0
+    busStops.forEach(stop => {
+        numOfPassengers += stop[0] - stop[1]
+    })
+    return numOfPassengers
+}
+// refactor
+// busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+
 /* factorial */
 function FirstFactorial(num) { 
     if (num < 0) return -1

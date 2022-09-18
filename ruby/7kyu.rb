@@ -1,3 +1,12 @@
+# find the stray number
+def stray (numbers)
+    numbers.tally.invert[1]
+end
+# refactor
+# arr.each { |x| return x if arr.count(x) == 1}
+# numbers.reduce(:^)
+# numbers.uniq.map {|x| return x if numbers.count(x) == 1}
+
 # find the next perfect square
 def find_next_square(sq)
     next_i = Math.sqrt(sq).to_i + 1
