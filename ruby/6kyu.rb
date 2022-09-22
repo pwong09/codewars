@@ -1,3 +1,12 @@
+# are arrays the same, with multiplicity
+def comp(array1, array2)
+  return false if array1.empty? || array2.empty?
+
+  result = false
+  array2.sort!.map { |x| x }
+  array1.sort!.each_with_index { |x, i| result = true if x * x != array2[i] }
+  !result
+end
 # equal sides of an array
 def find_even_index(arr)
   sum = 0
@@ -18,10 +27,10 @@ end
 # def find_even_index(arr)
 #   left_sum = 0
 #   right_sum = arr.reduce(:+)
-  
+
 #   arr.each_with_index do |e, ind|
 #     right_sum -= e
-    
+
 #     return ind if left_sum == right_sum
 
 #     left_sum += e
