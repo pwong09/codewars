@@ -7,19 +7,16 @@ def comp(array1, array2)
   array1.sort!.each_with_index { |x, i| result = true if x * x != array2[i] }
   !result
 end
+
 # equal sides of an array
 def find_even_index(arr)
-  sum = 0
   left_sum = 0
-  arr.each do |num| 
-    sum += num
-  end
-  for i in 0...arr.length
-    sum -= arr[i]
-    if left_sum === sum
-      return i
-    end
-    left_sum += arr[i]
+  sum = arr.reduce(:+)
+  arr.each do |num, i|
+    sum -= num
+    return i if left_sum == sum
+
+    left_sum += num
   end
   -1
 end
@@ -35,33 +32,32 @@ end
 
 #     left_sum += e
 #   end
-  
-#   -1  
+
+#   -1
 # end
 
 # unreadable / hard to read option
 # 0.upto(ary.length).select{|l| ary[0..l].reduce(:+) == ary[l..-1].reduce(:+)}.first || -1
 
 # help the bookseller
-def stockList(listOfArt, listOfCat)
-    return "" if listOfArt.empty? or listOfCat.empty?
-    result = {}
-    listOfArt.each do |book|
-        listOfCat.each do |letter|
-            if !result[letter]
-                result[letter] = 0
-            end
-            if book[0] == letter
-                number = book.split(' ')[1].to_i
-                result[letter] += number
-            end
-        end
+def stock_list(list_of_art, list_of_cat)
+  return '' if list_of_art.empty? || list_of_cat.empty?
+
+  result = {}
+  list_of_art.each do |book|
+    list_of_cat.each do |letter|
+      result[letter] = 0 unless result[letter]
+      if book[0] == letter
+        number = book.split(' ')[1].to_i
+        result[letter] += number
+      end
     end
-    str = ""
-    result.each do |key, value|
-        str += "(#{key} : #{value}) - "
-    end
-    str.chomp(" - ")
+  end
+  str = ''
+  result.each do |key, value|
+    str += "(#{key} : #{value}) - "
+  end
+  str.chomp(' - ')
 end
 # refactor
 # def stockList(stock_list, categories)
@@ -88,16 +84,16 @@ end
 # end
 
 # Test if number is prime
-def isPrime(num)
-    return false if num < 2
-    return true if num == 2
-    maxDivide = Math.sqrt(num) + 1;
-    for i in 2...maxDivide
-        if num % i == 0
-            return false
-        end
-    end
-    return true
+def prime?(num)
+  return false if num < 2
+
+  return true if num == 2
+
+  max_divide = Math.sqrt(num) + 1
+  max_divide.each_with_index do |el, i|
+    return false if (el % i).zero?
+  end
+  true
 end
 
 # refactor
