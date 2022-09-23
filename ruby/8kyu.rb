@@ -1,7 +1,7 @@
 # hello name or world
 def hello(name = nil)
-  if name.nil? or name.empty?
-    "Hello, World!"
+  if name.nil? || name.empty?
+    'Hello, World!'
   else
     "Hello, #{name.capitalize}!"
   end
@@ -16,8 +16,9 @@ end
 
 # reverse words
 def reverse(string)
-  string.split.reverse!.join(" ")
+  string.split.reverse!.join(' ')
 end
+
 # cockroach speed
 def cockroach_speed(s)
   (s * 27.7778).to_i
@@ -35,23 +36,24 @@ end
 # "drink " + (old < 14? "toddy": old < 18? "coke": old < 21? "beer": "whisky") 
 
 # get a character from ASCII value
-def getChar(c)
-  c.chr
+def get_char(char)
+  char.chr
 end
+
 # return number 5 every time w/o using numbers
 def unusual_five
-  ['x','x','x','x','x'].size
-end  
+  '%w(x)'.size
+end
 # refactor
 # 'five!'.length
 
 # reduce but grow
-def grow(x) 
+def grow(x)
   x.reduce(:*)
 end
 
 # is it a palindrome?
-def is_palindrome(str)
+def palindrome?(str)
   str = str.downcase
   str == str.reverse
 end
@@ -63,14 +65,14 @@ end
 
 # what's the real foor
 def get_real_floor(n)
-  if n < 0
-    return n
-  elsif n == 0 or n == 1
-    return 0
+  if n.negative?
+    n
+  elsif n.zero? || n == 1
+    0
   elsif n <= 13
-    return n - 1
+    n - 1
   elsif n > 13
-    return n - 2
+    n - 2
   end
 end
 # refactor
@@ -78,11 +80,12 @@ end
 
 # plural
 def plural(n)
-  n == 1 ? false : true
+  n != 1
 end
+
 # testing 1-2-3
-def number lines
-  lines.nil? ? [] : lines.each_with_index.map { |x, idx| "#{idx+1}: #{x}"}
+def number(lines)
+  lines.nil? ? [] : lines.each_with_index.map { |x, idx| "#{idx + 1}: #{x}" }
 end
 # refactor
 # def plural(n)
@@ -91,8 +94,8 @@ end
 # end
 
 # flower petals
-def lovefunc( flower1, flower2 )
-  flower1 % 2 == 0 && flower2 % 2 != 0 ? true :
+def lovefunc(flower1, flower2)
+  flower1.even? && flower2 % 2 != 0 ? true :
   flower1 % 2 != 0 && flower2 % 2 == 0 ? true : false
 end
 # refactor
@@ -104,7 +107,7 @@ end
 def multiply(num1, num2)
   num1 * num2
 end
-#refactor
+# refactor
 # def multiply(a,b)
 #   raise ArgumentError, 'arguments must be a numbers' unless a.is_a?(Integer) and b.is_a?(Integer)
 #   a*b
@@ -114,14 +117,15 @@ end
 def solution(str)
   str.reverse
 end
+
 # counting sheep
 def count_sheep(num)
-  num == 0 ? "" : nil
-  str = ""
+  num.zero? ? '' : nil
+  str = ''
   for i in 1..num
-    str = str + "#{i} sheep..."
+    str += "#{i} sheep..."
   end
-  return str
+  str
 end
 # refactor
 # def count_sheep(num)
@@ -133,20 +137,19 @@ end
 
 # keep hydrated
 def litres(time)
-  return (time * 0.5).floor
+  (time * 0.5).floor
 end
+
 # sum array w/o highest & lowest numbers
 def sum_array(arr)
-  if arr == nil || arr == [] || arr.length <= 2
-    return 0
-  else
-    arr.sort!
-    arr.delete_at(0)
-    arr.delete_at(-1)
-    return arr.inject(0, :+)
-  end
+  return 0 if arr.nil? || arr.empty? || arr.length <= 2
+
+  arr.sort!
+  arr.delete_at(0)
+  arr.delete_at(-1)
+  arr.inject(0, :+)
 end
-#refactor
+# refactor
 # def sum_array(arr)
 #   if arr.kind_of?(Array) and arr.length > 2
 #     arr.inject(:+) - arr.min - arr.max
@@ -160,14 +163,14 @@ end
 
 # months of the year in quarter
 def quarter_of(month)
-  if month <= 3 
-    return 1
-  elsif month <= 6 
-    return 2
-  elsif month <= 9 
-    return 3
+  if month <= 3
+    1
+  elsif month <= 6
+    2
+  elsif month <= 9
+    3
   else
-    return 4
+    4
   end
 end
 # refactor
@@ -191,7 +194,7 @@ end
 
 # basic math ops in string
 def basic_op(operator, value1, value2)
-  return eval "#{value1}#{operator}#{value2}"
+  eval "#{value1}#{operator}#{value2}"
 end
 
 # refactor
@@ -204,11 +207,11 @@ end
 
 # sum of positive numbers in array
 def positive_sum(arr)
-  sum=0
-  arr.each {|x|
-  if x>0
-  sum+=x end}
-return sum
+  sum = 0
+  arr.each do |x|
+    sum += x if x.positive?
+  end
+  sum
 end
 # refactor with methods
 # def positive_sum(arr)
@@ -224,17 +227,17 @@ def between(a, b)
   return array
 end
 # refactor
-def between(a, b)
-  (a..b).to_a
-end
+# def between(a, b)
+#   (a..b).to_a
+# end
 
 # Sum Numbers Array
 def sum(numbers)
   sum = 0
-  for number in numbers
-    sum = sum + number
+  numbers.each do |num|
+    sum += num
   end
-  return sum
+  sum
 end
 # refactor
 # def sum(numbers)
@@ -247,20 +250,20 @@ end
 # enough
 def enough(cap, on, wait)
   remainder = cap - on
-  return remainder - wait >= 0 ? 0 : (remainder - wait) * -1
-end  
-# refactor
-def enough(cap, on, wait)
-  [on + wait - cap, 0].max
+  remainder - wait >= 0 ? 0 : (remainder - wait) * -1
 end
+# refactor
+# def enough(cap, on, wait)
+#   [on + wait - cap, 0].max
+# end
 
 # powers of 2
 def powers_of_two(n)
-    arr = []
-    for x in 0..n
-      arr.push(2 ** x)
-    end
-    return arr
+  arr = []
+  n.each do |x|
+    arr.push(2**x)
+  end
+  arr
 end
 # refactor
 # def powers_of_two(n)
