@@ -12,7 +12,7 @@ end
 def find_even_index(arr)
   left_sum = 0
   sum = arr.reduce(:+)
-  arr.each do |num, i|
+  arr.each_with_index do |num, i|
     sum -= num
     return i if left_sum == sum
 
